@@ -57,6 +57,17 @@ app.get('/messages/:messageId', async (req, res) => {
     })
   }
 })
+app.get('/aboutme', async (req, res) => {
+  // load all messages from database
+  const me = [{
+    name: "Ashwin Rabindran",
+    imageUrl: "https://cdn.discordapp.com/attachments/516084458714300436/930572075960238080/IMG_7669.jpg",
+    desc: "I'm a student at the NYU Stern School of Business, concentrating in Finance and also pursuing a degree in Computer Science.  I enjoy making projects that use the power of computer science to gain greater insight on financial instruments. Some projects that I've done include a website that tracks trending cryptocurrencies based on Twitter activity, and a website that analyzes the social sentiment of a popular finance forum to determine their outlook on the stock market.",
+    isRobot: false,
+  }]
+   return res.json(me);
+})
+
 // a route to handle logging out users
 app.post('/messages/save', async (req, res) => {
   // try to save the message to the database
